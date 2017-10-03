@@ -1,0 +1,83 @@
+{{!< default}}
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8" style="margin-left: 0px; margin-right: 0px;">
+				<div class="carousel-inner" style="border-radius: 3px;">
+					{{# each data.posts.results}}
+						<div class="item" onclick="goToPost({{postUrl slug}})">
+							{{#if image}}
+								<img src="{{{cloudinaryUrl image}}}" style="position: relative; width: 100%; height: 400px; background: url('/images/no-image.png')">
+							{{/if}}
+				
+							<h3 style="background-color:#990000; margin-top: 0px; min-height: 75px; padding: 8px;"><a href="{{postUrl slug}}" style="color: #FFCC00;">{{{title}}}</a></h3>
+							{{!-- <p>{{{content.brief}}}</p> --}}
+							{{!-- {{#if content.extended}}<a class="read-more" href="{{postUrl slug}}">Read more...</a>{{/if}} --}}
+						</div>
+					{{/each}}
+				</div>
+				<br>
+				<div style="text-align:center;">
+					{{# each data.posts.results}}
+						<span class="dot" onclick="currentSlide({{@index}})"></span> 
+					{{/each}}
+				</div>
+				<br>
+			</div>
+
+			<div class="col-md-4" style="max-height: 475px; border-radius: 3px;">
+				<div style="border-radius: 3px;">
+					<div>
+						<h3 class="color-scheme" style="text-align: center; margin: 0px;padding-top: 5px; padding-bottom: 5px;">Anouncements</h3>
+					</div>
+					{{#each data.announcements.results}}
+						<div style="padding: 10px; margin: 0px; border-color: #990000; border-style: solid;">
+							{{{content}}}
+						</div>
+					{{/each}}
+					{{!-- <div style="padding: 10px; margin: 0px; border-color: #990000; border-style: solid;">
+						stusdfasdf
+					</div>
+					<div style="padding: 10px; margin: 0px; border-color: #990000; border-style: solid;">
+						stusdfasdf
+					</div> --}}
+				</div>
+			</div>
+		</div>
+
+	</div>
+		{{!-- {{>pagination}} --}}
+
+		<script>
+			var slideIndex = 0;
+			showSlides();
+
+			function plusSlides(n) {
+				showSlides(slideIndex += n);
+			}
+
+			function currentSlide(n) {
+				showSlides(slideIndex = n);
+			}
+
+			function showSlides(n) {
+				var i;
+				var slides = document.getElementsByClassName("item");
+				var dots = document.getElementsByClassName("dot");
+				for (i = 0; i < slides.length; i++) {
+					slides[i].style.display = "none";  
+				}
+				slideIndex++;
+				if (slideIndex > slides.length) {slideIndex = 1}    
+				for (i = 0; i < dots.length; i++) {
+					dots[i].className = dots[i].className.replace(" active", "");
+				}
+				slides[slideIndex-1].style.display = "block";  
+				dots[slideIndex-1].className += " active";
+				setTimeout(showSlides,10000); // Change image every 2 seconds
+			}
+
+			function goToPost(postUrl) {
+				console.log(postUrl);
+				window.location.href = postUrl;
+			}
+		</script>
