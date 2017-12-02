@@ -193,7 +193,7 @@ module.exports = function () {
 
 	// Direct url link to a specific post
 	_helpers.postUrl = function (postSlug, options) {
-		return ('/blog/post/' + postSlug);
+		return ('/news/post/' + postSlug);
 	};
 
 	// might be a ghost helper
