@@ -1,100 +1,46 @@
-* {box-sizing:border-box}
+@import url("slideshow.css");
 
-/* Slideshow container */
-.slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
+body {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  min-height: 100%;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-weight: normal;
+  background: #faf9f2;
+}
+.navbar-default {
+  background-color: #990000 !important;
+  font-size: 20px;
+}
+.navbar-header .navbar-toggle > span,
+.navbar-brand,
+.navbar-header .navbar-toggle .icon-bar,
+.navbar-default .navbar-nav > li > a {
+  color: #FFCC00 !important;
+}
+.navbar-default .navbar-nav > .active > a {
+  background-color:  #800000 !important;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  background-color:  #800000 !important;
+  color: white !important;
 }
 
-.mySlides {
-    display: none;
-    overflow: hidden;
-    position: relative;
+footer {
+  grid-row-start: 4;
+  grid-row-end: 4;
+  background-color: #777777;
+  color: #FFCC00;
+  min-height: 20%;
+  margin: 0;
 }
-
-/* Next & previous buttons */
-.prev, .next {
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* Caption text */
-.text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
+.affiliations {
   text-align: center;
 }
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-/* The dots/bullets/indicators */
-.dot {
-  cursor:pointer;
-  height: 13px;
-  width: 13px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block !important;
-  transition: background-color 0.6s ease;
-}
-
-.active, .dot:hover {
-  background-color: #FFCC00;
-}
-
-/* Fading animation */
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-.color-scheme {
-  color: #FFCC00;
-  background-color: #990000;
-}
-
-.background-color {
-  background-color: #990000;
-}
-
-.text-color {
-  color:#FFCC00;
-}
-@-webkit-keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-@keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
+.logo {
+  display: inline-block;
+  max-height: 150px;
+  max-width: 250px;
+  padding: 20px;
 }
