@@ -6,7 +6,7 @@
 					{{# each data.posts.results}}
 						<div class="item" onclick="goToPost({{postUrl slug}})">
 							{{#if image}}
-								<img src="{{{cloudinaryUrl image}}}" style="position: relative; width: 100%; height: 400px; background: url('/images/no-image.png')">
+								<img src="{{{cloudinaryUrl image}}}" style="position: relative; width: 100%; height: 400px; background-color: black">
 							{{/if}}
 				
 							<h3 style="background-color:#990000; margin-top: 0px; min-height: 75px; padding: 8px;"><a href="{{postUrl slug}}" style="color: #FFCC00;">{{{title}}}</a></h3>
