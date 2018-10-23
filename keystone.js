@@ -29,7 +29,8 @@ keystone.init({
 	}).engine,
 
 	'emails': 'templates/emails',
-
+	'cloudinary config': process.env.CLOUDINARY_URL,
+	'cookie secret': process.env.COOKIE_SECRET,
 	'auto update': true,
 	'session': true,
 	'auth': true,
