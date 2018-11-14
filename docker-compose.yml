@@ -1,0 +1,16 @@
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+     - "8080:80"
+    links:
+      - "mongo:localhost"
+    depends_on:
+      - "mongo"
+    working_dir: "/TrojansFC"
+    command: "node keystone.js"
+  mongo:
+    image: "mongo:latest"
+    ports:
+      - "27017:27017"
