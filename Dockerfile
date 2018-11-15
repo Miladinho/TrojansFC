@@ -5,5 +5,3 @@ COPY . /TrojansFC
 WORKDIR /TrojansFC
 
 RUN npm install
-
-EXPOSE 80

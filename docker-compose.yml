@@ -1,9 +1,11 @@
 version: "3"
 services:
   web:
+    env_file:
+      - ".env"
     build: .
     ports:
-     - "8080:80"
+     - "${PORT}:${PORT}"
     depends_on:
       - "mongo"
     working_dir: "/TrojansFC"
