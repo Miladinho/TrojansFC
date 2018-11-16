@@ -8,4 +8,4 @@ jobs:
       # - machine: true
     steps:
       - checkout
-      - run: docker-compose up --build
+      - run: sudo docker-compose up --build
