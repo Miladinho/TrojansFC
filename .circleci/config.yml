@@ -3,7 +3,9 @@ version: 2
 jobs:
   build:
     docker: 
-      - image: circleci/node:4.8.2
+      # Primary container where all steps will be run
+      # - image: circleci/node:4.8.2
+      - machine: true
     steps:
       - checkout
-      - run: echo "initial ci setup"
+      - run: docker-compose up --build
