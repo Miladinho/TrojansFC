@@ -12,6 +12,7 @@ jobs:
           name: Test docker-compose
           command: |
             printf "PORT=${PORT} \n MONGO_URI=${MONGO_URI} \n COOKIE_SECRET=${COOKIE_SECRET} \n CLOUDINARY_URL=${CLOUDINARY_URL}" > .env
+            sudo service docker start
             sudo docker-compose up --build 
             sudo docker run --network container:web \
               appropriate/curl --retry 10 --retry-delay 1 --retry-connrefused http://localhost:8080/contacts/test
