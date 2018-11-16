@@ -31,6 +31,7 @@ keystone.init({
 	'emails': 'templates/emails',
 	'cloudinary config': process.env.CLOUDINARY_URL,
 	'cookie secret': process.env.COOKIE_SECRET,
+	'mongo': process.env.MONGO_URI || 'mongodb://localhost:27017',
 	'auto update': true,
 	'session': true,
 	'auth': true,
