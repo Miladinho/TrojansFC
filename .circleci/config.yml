@@ -4,8 +4,8 @@ jobs:
   build:
     docker: 
       # Primary container where all steps will be run
-      # - image: circleci/node:4.8.2
-      - machine: true
+      - image: circleci/node:4.8.2
+      # - machine: true
     steps:
       - checkout
       - run: docker-compose up --build
