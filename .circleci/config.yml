@@ -11,6 +11,5 @@ jobs:
             printf "PORT=${PORT} \n MONGO_URI=${MONGO_URI} \n COOKIE_SECRET=${COOKIE_SECRET} \n CLOUDINARY_URL=${CLOUDINARY_URL}" > .env 
             sudo docker-compose up --build -d
             sudo docker container ls
-            sudo curl -L --retry 10 --retry-delay 1 http://localhost:$PORT
             sudo docker run --network container:project_web_1 \
               appropriate/curl -L --ipv4 --retry 10 --retry-delay 1 --retry-connrefused http://localhost:$PORT
